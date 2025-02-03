@@ -1,0 +1,23 @@
+# Inherit configuration of a package
+include: package:commitlint_cli/commitlint.yaml
+
+# Custom rules
+rules:
+  type-case:
+    - 2
+    - always
+    - 'lower-case'
+
+  type-enum:
+    - 2
+    - always
+    - ['build', 'chore', 'ci', 'docs', 'feat', 'fix', 'refactor', 'style', 'test']
+
+  subject-case:
+    - 2
+    - always
+    - 'lower-case'
+
+# Whether commitlint uses the default ignore rules.
+defaultIgnores: true
+  
