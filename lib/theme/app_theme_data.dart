@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 
 class AppThemeData {
   final ThemeColorData colors;
+  final ThemeLabelData textStyle;
 
-  const AppThemeData({this.colors = const ThemeColorData()});
+  const AppThemeData({
+    this.colors = const ThemeColorData(),
+    this.textStyle = const ThemeLabelData(),
+  });
 }
 
 class ThemeColorData {
@@ -32,4 +36,80 @@ class ThemeColorData {
     this.licorice = const Color(0xff24140D),
     this.sage = const Color(0xffB1B39A),
   });
+}
+
+class ThemeLabelData {
+  final TextStyle displayLarge;
+  final TextStyle displayMedium;
+  final TextStyle titleLarge;
+  final TextStyle titleMedium;
+  final TextStyle titleSmall;
+  final TextStyle bodyLarge;
+  final TextStyle bodyMedium;
+  final TextStyle displaySmall;
+
+  const ThemeLabelData({
+    this.displayLarge = const TextStyle(
+      fontFamily: 'Harmoni',
+      fontSize: 42,
+      decoration: TextDecoration.none,
+    ),
+    this.displayMedium = const TextStyle(
+      fontFamily: 'Harmoni',
+      fontSize: 32,
+      decoration: TextDecoration.none,
+    ),
+    this.displaySmall = const TextStyle(
+      fontFamily: 'Harmoni',
+      fontSize: 28,
+      decoration: TextDecoration.none,
+    ),
+    this.titleLarge = const TextStyle(
+      fontFamily: 'Harmoni',
+      fontSize: 22,
+      decoration: TextDecoration.none,
+    ),
+    this.titleMedium = const TextStyle(
+      fontFamily: 'Harmoni',
+      fontSize: 18,
+      decoration: TextDecoration.none,
+    ),
+    this.titleSmall = const TextStyle(
+      fontFamily: 'Harmoni',
+      fontSize: 16,
+      decoration: TextDecoration.none,
+    ),
+    this.bodyLarge = const TextStyle(
+      fontFamily: 'Arima Madurai',
+      fontSize: 22,
+      decoration: TextDecoration.none,
+    ),
+    this.bodyMedium = const TextStyle(
+      fontFamily: 'Arima Madurai',
+      fontSize: 19,
+      decoration: TextDecoration.none,
+    ),
+  });
+
+  ThemeLabelData copyWith({
+    TextStyle? displayLarge,
+    TextStyle? displayMedium,
+    TextStyle? titleLarge,
+    TextStyle? titleMedium,
+    TextStyle? titleSmall,
+    TextStyle? bodyLarge,
+    TextStyle? bodyMedium,
+    TextStyle? displaySmall,
+  }) {
+    return ThemeLabelData(
+      displayLarge: displayLarge ?? this.displayLarge,
+      displayMedium: displayMedium ?? this.displayMedium,
+      titleLarge: titleLarge ?? this.titleLarge,
+      titleMedium: titleMedium ?? this.titleMedium,
+      titleSmall: titleSmall ?? this.titleSmall,
+      bodyLarge: bodyLarge ?? this.bodyLarge,
+      bodyMedium: bodyMedium ?? this.bodyMedium,
+      displaySmall: displaySmall ?? this.displaySmall,
+    );
+  }
 }
