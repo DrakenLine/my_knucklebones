@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_knucklebones/common/board/board_widget.dart';
 import 'package:my_knucklebones/theme/app_theme_data.dart';
-import 'package:my_knucklebones/theme/label.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -11,11 +11,10 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
       body: Center(
-        child: Label.displayLarge(
-          "HomePage",
-          color: theme.colors.blackOlive,
-        ),
-      ),
+          child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: BoardWidget(),
+      )),
     );
   }
 }
