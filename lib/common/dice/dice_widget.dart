@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:my_knucklebones/common/dice/dice_face_enum.dart';
+import 'package:my_knucklebones/common/dice/dice_size_enum.dart';
+import 'package:my_knucklebones/common/dice/dice_size_extensions.dart';
 import 'package:my_knucklebones/theme/app_theme_data.dart';
 
 class Dice extends StatelessWidget {
   final DiceFace diceFace;
+  final DiceSize diceSize;
   final Color? color;
   const Dice({
     super.key,
     required this.diceFace,
+    required this.diceSize,
     this.color = const Color(0xFFF3CCA9),
   });
 
@@ -16,18 +20,17 @@ class Dice extends StatelessWidget {
     const AppThemeData theme = AppThemeData();
 
     return Container(
-      padding: EdgeInsets.all(6),
+      padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
         color: color ?? theme.colors.desertSand,
         border: Border.all(color: theme.colors.black, width: 2),
         borderRadius: BorderRadius.circular(5),
       ),
       child: Row(
-        spacing: 5,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Column(
-            spacing: 5,
+            spacing: 2,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               dot(diceFace != DiceFace.one),
@@ -43,7 +46,7 @@ class Dice extends StatelessWidget {
                 .contains(diceFace),
           ),
           Column(
-            spacing: 5,
+            spacing: 2,
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
               dot(
@@ -67,8 +70,8 @@ class Dice extends StatelessWidget {
         shape: BoxShape.circle,
         color: condition ? theme.colors.black : Colors.transparent,
       ),
-      width: 20,
-      height: 20,
+      width: diceSize.getSize(),
+      height: diceSize.getSize(),
     );
   }
 }
