@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_knucklebones/common/board/cell_widget.dart';
 import 'package:my_knucklebones/theme/app_theme_data.dart';
 
 class BoardWidget extends StatelessWidget {
@@ -39,17 +40,12 @@ class BoardWidget extends StatelessWidget {
           padding: EdgeInsets.zero,
           crossAxisCount: 3,
           children: List<Widget>.generate(3 * 3, (int index) {
-            return Container(
-              margin: EdgeInsets.all(6),
-              decoration: BoxDecoration(
-                color: theme.colors.desertSand,
-                borderRadius: BorderRadius.circular(5),
-                border: Border.all(
-                  color: theme.colors.black,
-                  width: 2,
-                ),
-              ),
-            );
+            bool isSelected = false;
+            return GestureDetector(
+                onTap: () => isSelected = !isSelected,
+                child: CellWidget(
+                  isSelected: isSelected,
+                ));
           }),
         ),
       ]),
