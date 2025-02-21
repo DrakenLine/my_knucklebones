@@ -42,7 +42,7 @@ class BoardWidget extends StatelessWidget {
           children: List<Widget>.generate(3 * 3, (int index) {
             bool isSelected = false;
             return GestureDetector(
-                onTap: () => isSelected = !isSelected,
+                onTap: () => print(index), //isSelected = !isSelected,
                 child: CellWidget(
                   isSelected: isSelected,
                 ));

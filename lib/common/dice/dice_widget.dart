@@ -19,7 +19,7 @@ class Dice extends StatelessWidget {
   Widget build(BuildContext context) {
     const AppThemeData theme = AppThemeData();
 
-    return Container(
+    Widget child = Container(
       padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
         color: color ?? theme.colors.desertSand,
@@ -27,6 +27,7 @@ class Dice extends StatelessWidget {
         borderRadius: BorderRadius.circular(5),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Column(
@@ -62,6 +63,12 @@ class Dice extends StatelessWidget {
           )
         ],
       ),
+    );
+
+    return Draggable<DiceFace>(
+      data: diceFace,
+      feedback: SizedBox(height: 120.0, width: 120.0, child: child),
+      child: child,
     );
   }
 
