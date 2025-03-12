@@ -1,0 +1,1 @@
+enum LabelWidgetSize { small, large }
