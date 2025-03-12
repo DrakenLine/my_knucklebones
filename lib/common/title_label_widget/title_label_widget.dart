@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_knucklebones/common/title_label/title_label_size_enum.dart';
+import 'package:my_knucklebones/common/title_label_widget/title_label_size_enum.dart';
 import 'package:my_knucklebones/theme/app_theme_data.dart';
 import 'package:my_knucklebones/theme/label.dart';
 
