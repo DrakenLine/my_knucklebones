@@ -50,7 +50,7 @@ class LabelWidget extends StatelessWidget {
           ],
         ),
         padding: padding(_size),
-        child: _direction == LabelWidgetDirection.vertical
+        child: _size == LabelWidgetSize.small
             ? Label.titleSmall(_text)
             : Label.titleLarge(_text),
       ),
