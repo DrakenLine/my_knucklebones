@@ -43,7 +43,7 @@ class LabelWidget extends StatelessWidget {
           boxShadow: <BoxShadow>[
             BoxShadow(
               color: theme.colors.black,
-              spreadRadius: 2,
+              spreadRadius: 0,
               blurRadius: 0,
               offset: Offset(-4, 4),
             ),
